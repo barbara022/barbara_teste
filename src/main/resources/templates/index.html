@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Sistema de cadastro de corridas</h1>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/motorista}">Cadastro de Motorista</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/motorista/listar}">Consulta Motoristas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/passageiro}">Cadastro de Passageiro</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/passageiro/listar}">Consulta Passageiro</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/corrida}">Cadastro de Corrida</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/corrida/listar}">Consultar Corrida</a>
+            </li>
+        </ul>
+
+    </div>
+    <script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

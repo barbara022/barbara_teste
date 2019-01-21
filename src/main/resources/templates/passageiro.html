@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Cadastro de Passageiro</h1>
+        <form action="#" th:action="@{/passageiro/add}" th:object="${passageiro}" method="post">
+
+            <div class="form-group">
+                <label for="inputNome">Nome</label>
+                <input id="inputNome" class="form-control" type="text" th:field="*{nome}" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="inputDataNasc">Data de Nascimento</label>
+                <input id="inputDataNasc" class="form-control" type="date" th:field="*{dataNascimento}" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="inputCpf">CPF</label>
+                <input id="inputCpf" class="form-control" type="text" th:field="*{cpf}" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="inputSexo">Sexo</label>
+                <select id="inputSexo" class="form-control" th:field="*{sexo}">
+                    <option th:value="'M'" th:text="Male"></option>
+                    <option th:value="'F'" th:text="Female"></option>
+                </select>
+            </div>
+
+            <div class="container">
+                <button type="submit" class="btn btn-info">Enviar</button>
+                <a href="/" class="btn btn-info" role="button">Voltar</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

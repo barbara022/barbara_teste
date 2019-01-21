@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <h1 class="text-center">Cadastro de Corrida</h1>
+    <form action="#" th:action="@{/corrida/add}" th:object="${corrida}" method="post">
+
+        <div class="form-group">
+            <label for="inputMotorista">Motorista</label>
+            <select id="inputMotorista" class="form-control" th:field="*{motorista}" required>
+                <option value="">Selecione o Motorista</option>
+                <option th:each="motorista : ${motoristas}"
+                        th:value="${motorista.nome}"
+                        th:text="${motorista.nome}"/>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPassageiro">Passageiro</label>
+            <select id="inputPassageiro" class="form-control" th:field="*{passageiro}" required>
+                <option value="">Selecione o Passageiro</option>
+                <option th:each="passageiro : ${passageiros}"
+                        th:value="${passageiro.nome}"
+                        th:text="${passageiro.nome}"/>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="inputValor">Valor</label>
+            <input id="inputValor" class="form-control" type="number" th:field="*{valor}" required/>
+        </div>
+
+        <div class="container">
+            <button type="submit" class="btn btn-info">Enviar</button>
+            <a href="/" class="btn btn-info" role="button">Voltar</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
